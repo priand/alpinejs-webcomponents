@@ -1,0 +1,66 @@
+<html>
+
+<head>
+	<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+	<script src="./common.js"></script>
+
+	<style>
+		/* Light DOM styles */
+		my-reactive-light span,
+		my-reactive-light button {
+			font-size: 120%;
+		}
+
+		my-reactive-light span {
+			width: 2rem;
+			display: inline-block;
+			text-align: center;
+		}
+
+		my-reactive-light button {
+			width: 2rem;
+			height: 2rem;
+			border: none;
+			border-radius: 6px;
+			background-color: red;
+			color: white;
+		}
+	</style>
+
+</head>
+
+<body>
+	<h1 x-data="{ message: 'I love AlpineJS dealing with Web Components!' }" x-text="message"></h1>
+
+	<br>
+	<h2>Web Component Reactive State - Shadow DOM</h2>
+	<script src="./reactiveshadow.js"></script>
+	<my-reactive-shadow start="33"></my-reactive-shadow>
+
+	<br><br>
+	<hr><br>
+	<h2>Web Component Reactive State - Light DOM</h2>
+	<script src="./reactivelight.js"></script>
+	<my-reactive-light start="44"></my-reactive-light>
+
+	<br><br>
+	<hr><br>
+	<h2>Web Component Properties</h2>
+	<script src="./wcproperties.js"></script>
+	<div x-data="{ vnum: 123, vbol: true, vstr: 'ABC', vobj: {a:1, b:2}, varr: [3,4] }">
+		Increment <code>num</code> <button @click="vnum--">-</button><button @click="vnum++">+</button>
+
+		<h4>No property binding</h4>
+		<my-prop></my-prop>
+
+		<h4>Binding individual properties</h4>
+		<my-prop x-prop:num="vnum" x-prop:bol="vbol" x-prop:str="vstr" x-prop:obj="vobj" x-prop:arr="varr"></my-prop>
+
+		<h4>Binding all properties</h4>
+		<my-prop x-props="{ num:vnum, bol:vbol, str:vstr, obj:vobj, arr:varr}"></my-prop>
+
+	</div>
+</body>
+
+</html>
