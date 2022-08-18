@@ -52,8 +52,8 @@ easier:
      which can lead to undesired effects/behaviors.
      Another solution is to auto bind the method in the component: `this.inc=this.inc.bind(this)`.  
   - `x-prop`: this is similar to `x-bind` but instead of binding an HTML attribute, it binds
-    an element property. A great AlpineJS addition would be to alias this with `.`, similar
-    to LitElement.  
+    an element property. A `.` alias is provided as a notation shorthand, similarly to `:` for
+    `x:bind`.  
   - `x-props`: binds a set of properties passed as an object. It is the 'spread' operator applied
     to element properties.  
   

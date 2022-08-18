@@ -55,8 +55,14 @@
 		<my-prop></my-prop>
 
 		<h4>Binding individual properties</h4>
-		<my-prop x-prop:num="vnum" x-prop:bol="vbol" x-prop:str="vstr" x-prop:obj="vobj" x-prop:arr="varr"></my-prop>
-
+		<table><tr>
+			<td>
+				<my-prop x-prop:num="vnum" x-prop:bol="vbol" x-prop:str="vstr" x-prop:obj="vobj" x-prop:arr="varr"></my-prop>
+			</td>
+			<td>
+				<my-prop .num="vnum" .bol="vbol" .str="vstr" .obj="vobj" .arr="varr"></my-prop>
+			</td>
+		</tr></table>
 		<h4>Binding all properties</h4>
 		<my-prop x-props="{ num:vnum, bol:vbol, str:vstr, obj:vobj, arr:varr}"></my-prop>
 
